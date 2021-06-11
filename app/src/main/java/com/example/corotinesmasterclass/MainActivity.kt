@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         CoroutineScope(Dispatchers.Default).launch {
             Log.d("--------","coroutines")
+
+
+
         }
     }
 }
