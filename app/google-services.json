@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "920121571806",
+    "project_id": "test-b86fe",
+    "storage_bucket": "test-b86fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920121571806:android:3efab52f58f4a123f1854f",
+        "android_client_info": {
+          "package_name": "com.example.corotinesmasterclass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920121571806-m3mm3g48a4ugkv8kk0ve52h8o0v8im54.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDWKqrqA17c-rv83cDhSN8kKKr83pLxD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920121571806-m3mm3g48a4ugkv8kk0ve52h8o0v8im54.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

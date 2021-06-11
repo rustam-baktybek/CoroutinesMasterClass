@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CorotinesMasterClass</string>
+    <string name="behavior">com.example.corotinesmasterclass.AppBarBehavior</string>
+    <string name="compose_shortcut_short_label1">label1</string>
+    <string name="compose_shortcut_long_label1">label1</string>
+    <string name="compose_disabled_message1">label1</string>
+</resources>
