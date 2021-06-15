@@ -16,6 +16,5 @@ class DialogFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-
+    }
 }
