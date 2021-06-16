@@ -38,7 +38,7 @@ jobs:
         id: signArtifact
         uses: victorbnl/build-signed-apk@main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
         with:
             keystore: ${{ secrets.KEY }}
             keystore_password: ${{ secrets.STOREPASSWORD }}

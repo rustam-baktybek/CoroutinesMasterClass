@@ -17,12 +17,9 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Default).launch {
             Log.d("--------","coroutines")
 
-
-
-
-
-
         }
+
+
     }
 }
 
