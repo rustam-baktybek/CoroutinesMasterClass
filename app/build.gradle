@@ -6,12 +6,15 @@ plugins {
 }
 
 android {
+    apply from: 'signingConfigs/release.gradle', to: android
+
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.example.corotinesmasterclass"
         minSdkVersion 23
+
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -22,11 +25,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled true
-            applicationIdSuffix ".stg"
+            applicationIdSuffix  ".stg"
             versionNameSuffix '-stg'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -41,6 +45,7 @@ android {
 }
 
 dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.2.0'

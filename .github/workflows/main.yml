@@ -34,4 +34,19 @@ jobs:
           name: build-output
           path: app/debug/app-debug.apk
 
- 
+      - name: Upload signed apk
+        id: signArtifact
+        uses: victorbnl/build-signed-apk@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+            keystore: ${{ secrets.KEY }}
+            keystore_password: ${{ secrets.STOREPASSWORD }}
+            key_alias: ${{ secrets.KEYNAME }}
+            key_password: ${{ secrets.KEYPASSWORD }}
+
+      - name: Upload Release APK
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: Release artifact
+          path: app/build/outputs/apk/release/app-release.apk
