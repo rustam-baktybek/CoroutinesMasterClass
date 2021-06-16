@@ -40,7 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
         with:
-            releaseDirectory: app/build/outputs/apk/ourbuildtype/release
+            releaseDirectory: app/build/outputs/apk/release
             alias: ${{ secrets.KEYNAME }}
             signingKeyBase64: ${{ secrets.KEY }}
             keyStorePassword: ${{ secrets.STOREPASSWORD }}
@@ -50,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v2.2.0
         with:
           name: Release artifact
-          path: app/build/outputs/apk/ourbuildtype/release/app-artifact-*.apk
+          path: app/build/outputs/apk/release/app-artifact-*.apk
