@@ -36,17 +36,18 @@ jobs:
 
       - name: Upload signed apk
         id: signArtifact
-        uses: victorbnl/build-signed-apk@main
+        uses: r0adkll/sign-android-release@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
         with:
-            keystore: ${{ secrets.KEY }}
-            keystore_password: ${{ secrets.STOREPASSWORD }}
-            key_alias: ${{ secrets.KEYNAME }}
-            key_password: ${{ secrets.KEYPASSWORD }}
+            releaseDirectory: app/build/outputs/apk/ourbuildtype/release
+            alias: ${{ secrets.KEYNAME }}
+            signingKeyBase64: ${{ secrets.KEY }}
+            keyStorePassword: ${{ secrets.STOREPASSWORD }}
+            keyPassword: ${{ secrets.KEYPASSWORD }}
 
       - name: Upload Release APK
         uses: actions/upload-artifact@v2.2.0
         with:
           name: Release artifact
-          path: app/build/outputs/apk/release/app-release.apk
+          path: app/build/outputs/apk/ourbuildtype/release/app-artifact-*.apk
