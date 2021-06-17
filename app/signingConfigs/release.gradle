@@ -1,6 +1,6 @@
 signingConfigs {
     release {
-        keyAlias 'key()'
+        keyAlias 'coroutinesmasterclass'
         keyPassword 'rustam'
         storeFile file('./key.jks')
         storePassword 'rustam'
