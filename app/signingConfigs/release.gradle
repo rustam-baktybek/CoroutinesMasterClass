@@ -1,7 +1,7 @@
 signingConfigs {
     release {
-        keyAlias 'rustam'
-        keyPassword 'key()'
+        keyAlias 'key()'
+        keyPassword 'rustam'
         storeFile file('./key.jks')
         storePassword 'rustam'
     }
