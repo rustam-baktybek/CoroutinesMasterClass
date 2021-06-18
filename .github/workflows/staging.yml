@@ -7,7 +7,7 @@ on:
 
 jobs:
   Unit-test:
-  name: Build project
+  name: Build aidem
   runs-on: ubuntu-20.04
 
   steps:
