@@ -2,6 +2,8 @@ name: Build & Publish
 
 on:
   push:
+    tags:
+      - 'v*.*.*'
     branches:
       - main
 
@@ -16,10 +18,10 @@ jobs:
           java-version: 1.8
       - name: Build APK
         run: |
-               ./gradlew test
-               ./gradlew assembleDebug --stacktrace
-               ./gradlew assembleRelease --stacktrace
-               ./gradlew bundleRelease
+          ./gradlew test
+          ./gradlew assembleDebug --stacktrace
+          ./gradlew assembleRelease --stacktrace
+          ./gradlew bundleRelease
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
