@@ -26,11 +26,9 @@ jobs:
           GOPATH: /home/runner/work/
           APP_FOLDER: app
           RELEASE_TITLE: New Build
-      - run: |
+        run: |
           export TAG_NAME=${{ github.ref }}
           go get -u github.com/tcnksm/ghr
           $GOPATH/bin/ghr -n $TAG_NAME "${TAG_NAME##*/}" "${GITHUB_WORKSPACE}/app/build/outputs/apk/release/app-release.apk"
-      - run: |
-          export TAG_NAME=${{ github.ref }}
           go get -u github.com/tcnksm/ghr
           $GOPATH/bin/ghr -n $TAG_NAME "${TAG_NAME##*/}" "${GITHUB_WORKSPACE}/app/build/outputs/bundle/release/app-release.aab"
