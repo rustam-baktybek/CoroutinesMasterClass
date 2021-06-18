@@ -2,10 +2,11 @@ name: Build & Publish
 
 on:
   push:
-    tags:
-      - v*.*.*
+    branches:
+      - main
 
 jobs:
+  if: startsWith(github.head_ref, 'release/') == true
   build:
     runs-on: ubuntu-latest
     steps:
