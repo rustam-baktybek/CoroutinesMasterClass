@@ -35,4 +35,4 @@ jobs:
           go get -u github.com/tcnksm/ghr
           $GOPATH/bin/ghr -n $TAG_NAME "${TAG_NAME##*/}" "${GITHUB_WORKSPACE}/app/build/outputs/bundle/release/app-release.aab"
           go get -u github.com/tcnksm/ghr
-          $GOPATH/bin/ghr -n $TAG_NAME "${TAG_NAME##*/}" "${GITHUB_WORKSPACE}/app/build/outputs/debug/app-debug.apk"
+          $GOPATH/bin/ghr -n $TAG_NAME "${TAG_NAME##*/}" "${GITHUB_WORKSPACE}/app/build/outputs/apk/debug/app-debug.apk"
