@@ -1,10 +1,10 @@
 package com.example.corotinesmasterclass
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.coroutines.*
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicInteger
 
 
@@ -14,12 +14,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        CoroutineScope(Dispatchers.Default).launch {
-            Log.d("--------","coroutines")
 
-        }
+        val myWorkRequest =
+            PeriodicWorkRequestBuilder<MyWorker>(
+                15,
+                TimeUnit.DAYS,
+                17,
+                TimeUnit.MINUTES
+            )
+                .build()
+
+        WorkManager.getInstance(this).enqueue(myWorkRequest)
+
     }
 }
+
 
 
 
