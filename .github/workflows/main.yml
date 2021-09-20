@@ -26,8 +26,8 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-            tag_name: ${{ env.VERSION_TAG }}
-            name: Release ${{ env.VERSION_TAG }}
+            tag_name: ${{ github.ref }}
+            name: Release ${{ github.ref }}
             body: |
               ---
               ### Checksums
