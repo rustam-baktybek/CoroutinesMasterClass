@@ -22,23 +22,20 @@ jobs:
           ./gradlew assembleDebug --stacktrace
           ./gradlew assembleRelease --stacktrace
           ./gradlew bundleRelease
-      - name: Upload APK
-        uses: actions/upload-artifact@v1
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-            name: apk
-            path: app/build/outputs/apk/debug/app-debug.apk
-
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-
+            tag_name: ${{ github.ref }}
+            release_name: Release ${{ github.ref }}
       - name: Create Release and Upload debug APK
         uses: actions/upload-artifact@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.get_version.outputs.VERSION }}
-          release_name: Release ${{ steps.get_version.outputs.VERSION }}
           path: |
             path/app/build/outputs/apk/release/app-release.apk
             /app/build/outputs/apk/release/app-release.apk
