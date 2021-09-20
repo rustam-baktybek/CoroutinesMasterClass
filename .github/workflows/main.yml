@@ -38,9 +38,9 @@ jobs:
               | armeabi-v7a | ${{ env.APK_ARMEABI_V7A_SHA }}
               | x86 | ${{ env.APK_X86_SHA }} |
             files: |
-              app-debug.apk
-              app-release.apk
-            draft: true
+              app/build/outputs/apk/release/app-release.apk
+              app/build/outputs/apk/debug/app-debug.apk
+            draft: false
             prerelease: false
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
