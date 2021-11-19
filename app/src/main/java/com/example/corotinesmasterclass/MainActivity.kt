@@ -26,6 +26,27 @@ class MainActivity : AppCompatActivity() {
 
         WorkManager.getInstance(this).enqueue(myWorkRequest)
 
+        val myWorkRequest1=
+            PeriodicWorkRequestBuilder<MyWorker>(
+                15,
+                TimeUnit.DAYS,
+                17,
+                TimeUnit.MINUTES
+            )
+                .build()
+
+        WorkManager.getInstance(this).enqueue(myWorkRequest)
+
+        val myWorkRequest2 =
+            PeriodicWorkRequestBuilder<MyWorker>(
+                15,
+                TimeUnit.DAYS,
+                17,
+                TimeUnit.MINUTES
+            )
+                .build()
+
+        WorkManager.getInstance(this).enqueue(myWorkRequest)
     }
 }
 
