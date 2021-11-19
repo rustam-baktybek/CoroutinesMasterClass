@@ -11,11 +11,14 @@ import java.util.concurrent.atomic.AtomicInteger
 class MainActivity : AppCompatActivity() {
     val sharedCounter: AtomicInteger = AtomicInteger(0)
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val myWorkRequest =
+        val myWorkRequest5 =
             PeriodicWorkRequestBuilder<MyWorker>(
                 15,
                 TimeUnit.DAYS,
@@ -24,7 +27,10 @@ class MainActivity : AppCompatActivity() {
             )
                 .build()
 
-        WorkManager.getInstance(this).enqueue(myWorkRequest)
+        WorkManager.getInstance(this).enqueue(myWorkRequest5)
+
+
+
 
         val myWorkRequest1=
             PeriodicWorkRequestBuilder<MyWorker>(
@@ -35,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             )
                 .build()
 
-        WorkManager.getInstance(this).enqueue(myWorkRequest)
+        WorkManager.getInstance(this).enqueue(myWorkRequest1)
 
         val myWorkRequest2 =
             PeriodicWorkRequestBuilder<MyWorker>(
@@ -46,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             )
                 .build()
 
-        WorkManager.getInstance(this).enqueue(myWorkRequest)
+        WorkManager.getInstance(this).enqueue(myWorkRequest2)
     }
 }
 
