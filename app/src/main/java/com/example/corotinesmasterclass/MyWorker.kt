@@ -7,6 +7,8 @@ import androidx.work.WorkerParameters
 
 class MyWorker(context: Context, params: WorkerParameters) :
     Worker(context, params) {
+
+
     override fun doWork(): Result {
         try {
             Log.d("--------","Success")
@@ -17,8 +19,15 @@ class MyWorker(context: Context, params: WorkerParameters) :
         return Result.success()
     }
 
+
+
+
     override fun onStopped() {
         super.onStopped()
         Log.d("--------","Stoppped")
     }
+
+
+
+
 }
